@@ -7,17 +7,42 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
+
 
 public class SplashActivity extends Activity {
-
+    private static int splashInterval = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-    }
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-    public void masuk(View view){
-        Intent masukIntent = new Intent(this, MapActivity.class);
-        startActivity(masukIntent);
-    }
+        setContentView(R.layout.activity_splash);
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                Intent i = new Intent(SplashActivity.this, MapActivity.class);
+                startActivity(i);
+
+
+                //jeda selesai Splashscreen
+                this.finish();
+            }
+
+
+            private void finish() {
+                finish();
+            }
+        }, splashInterval);
+
+    };
+
 }
+
+

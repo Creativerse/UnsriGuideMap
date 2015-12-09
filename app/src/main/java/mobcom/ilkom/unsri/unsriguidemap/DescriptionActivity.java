@@ -19,7 +19,7 @@ public class DescriptionActivity extends AppCompatActivity {
         database = new DatabaseHandler(this);
         fakultas = database.getData("1");
         ImageView image = (ImageView)findViewById(R.id.imageView);
-        TextView description = (TextView)findViewById(R.id.textView);
+        TextView description = (TextView)findViewById(R.id.textView2);
     }
 
     @Override
