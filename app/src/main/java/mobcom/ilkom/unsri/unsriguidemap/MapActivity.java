@@ -4,13 +4,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MapActivity extends AppCompatActivity {
+    private DatabaseHandler database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        database = new DatabaseHandler(this);
+        TextView hello_ = (TextView)findViewById(R.id.hello);
+
+        database.addData("data");
+        hello_.setText(database.getCompanyIdByToken("1"));
     }
 
     @Override
