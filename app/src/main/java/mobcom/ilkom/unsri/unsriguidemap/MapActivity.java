@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class MapActivity extends AppCompatActivity {
 
@@ -11,6 +12,10 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        ImageView map = findViewById(R.id.map);
+        ImageView pointer = findViewById(R.id.pointer);
+
     }
 
     @Override
