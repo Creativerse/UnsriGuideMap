@@ -1,4 +1,3 @@
 # UnsriGuideMap
-aku tau aku germo
-
-Emang hasbyalkaff itu ganteng
+aku tau aku hasby katek godek
+Emang hasbyalkaff itu jones
