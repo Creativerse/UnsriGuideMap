@@ -8,14 +8,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DescriptionActivity extends AppCompatActivity {
+    private DatabaseHandler database;
+    private Fakultas fakultas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
 
-        ImageView image = findViewById(R.id.imageView);
-        TextView description = findViewById(R.id.textView);
+        database = new DatabaseHandler(this);
+        fakultas = database.getData("1");
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        TextView description = (TextView)findViewById(R.id.textView);
     }
 
     @Override

@@ -10,12 +10,13 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Hasby on 05/12/2015.
  */
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "ugm";
     private static final String TABLE_NAME = "description";
     private static final String FIELD_ID = "id";
     private static final String FIELD_NAME = "name";
     private static final String FIELD_DESCRIPTION = "description";
+    private static final String FIELD_IMAGE = "image";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,7 +27,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_TABLE = "CREATE TABLE "+ TABLE_NAME +" ("
                 + FIELD_ID +" VARCHAR(50), "
                 + FIELD_NAME +" VARCHAR(100), "
-                + FIELD_DESCRIPTION +" VARCHAR(10) );";
+                + FIELD_DESCRIPTION +" VARCHAR(100), "
+                + FIELD_IMAGE +" VARCHAR(10) );";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -38,16 +40,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public String getCompanyIdByToken(String token) {
+    public Fakultas getData(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select * from "+ TABLE_NAME +" where "+ FIELD_ID +" = '" + token +"';", null);
+        Cursor cursor = db.rawQuery("select * from "+ TABLE_NAME +" where "+ FIELD_ID +" = '" + id +"';", null);
         if (cursor != null) {
             cursor.moveToFirst();
-            return cursor.getString(2);
+            return new Fakultas(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
         }
         else {
-            return "no data";
+            return null;
         }
     }
 
