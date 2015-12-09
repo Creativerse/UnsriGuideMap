@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class MapActivity extends AppCompatActivity {
     private DatabaseHandler database;
@@ -14,11 +14,9 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        database = new DatabaseHandler(this);
-        TextView hello_ = (TextView)findViewById(R.id.hello);
+        ImageView map = (ImageView)findViewById(R.id.map);
+        ImageView pointer = (ImageView)findViewById(R.id.pointer);
 
-        database.addData("data");
-        hello_.setText(database.getCompanyIdByToken("1"));
     }
 
     @Override
