@@ -1,20 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    tools:context="mobcom.ilkom.unsri.unsriguidemap.MapActivity">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:src="@drawable/bawah_fix"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/map"/>
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pointer"
-        android:layout_below="@+id/map"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp" />
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:context="mobcom.ilkom.unsri.unsriguidemap.MapActivity">
 
-</RelativeLayout>
+            <ImageView
+                android:src="@drawable/bawah_fix"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:id="@+id/map"/>
+
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+</ScrollView>
