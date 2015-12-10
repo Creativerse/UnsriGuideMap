@@ -14,8 +14,8 @@ public class DescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
 
-        ImageView image = findViewById(R.id.imageView);
-        TextView description = findViewById(R.id.textView);
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        TextView description = (TextView)findViewById(R.id.textView2);
     }
 
     @Override
