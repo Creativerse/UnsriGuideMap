@@ -15,7 +15,6 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map);
 
         ImageView map = (ImageView)findViewById(R.id.map);
-        //ImageView pointer = (ImageView)findViewById(R.id.pointer);
         
     }
 
