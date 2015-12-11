@@ -16,7 +16,7 @@ public class MapActivity extends AppCompatActivity {
 
         ImageView map = (ImageView)findViewById(R.id.map);
         ImageView pointer = (ImageView)findViewById(R.id.pointer);
-
+        
     }
 
     @Override
